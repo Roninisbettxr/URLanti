@@ -1,0 +1,137 @@
+<html>
+<style>
+h4{
+text-align: center;
+color: white;
+font-size: 40px;
+
+
+
+
+}
+
+body{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYl3CmX9BI1YWcLAlNcE9J_WhUJH92z3KR0EgAs6Pag&s=10");
+
+
+
+
+}
+
+input{
+background-color: green;
+color: white;
+width: 100vw;
+max-width: 86.1vw;
+height: 52px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+outline: 0px;
+}
+button{
+background-color: red;
+height: 51px;
+border-top-left-radius: 30px;
+border-top-right-radius: 30px;
+border-bottom-left-radius: 30px;
+border-bottom-right-radius: 30px;
+
+}
+button:hover{
+background-color: darkred;
+
+
+}
+input:hover{
+background-color: darkgreen;
+
+
+
+}
+
+h2{
+color: white;
+
+
+}
+h1{
+text-decoration: none;
+}
+
+
+
+
+
+</style>
+
+<body>
+<h4> URL Malware Finder </h4>
+<div>
+<input id="user-url" placeholder="Search A Url To Fine MalWare Or Non!">
+<button id="scan-btn">Search  Url</button>
+</div>
+
+<div id="scan-result"></div>
+
+<script>
+        const scanBtn = document.getElementById('scan-btn');
+        const urlInput = document.getElementById('user-url');
+        const resultDiv = document.getElementById('scan-result');
+
+        scanBtn.addEventListener('click', function() {
+            const urlToCheck = urlInput.value.trim();
+
+            if (urlToCheck === "") {
+                resultDiv.style.color = "#ffdd00";
+                resultDiv.innerHTML = "⚠️ Please enter a URL first!";
+                return;
+            }
+
+            resultDiv.style.color = "#ffffff"; 
+            resultDiv.innerHTML = "🔍 Scanning infrastructure... checking for malware...";
+
+            setTimeout(function() {
+                const scamKeywords = ['free', 'virus', 'crack', 'steal', 'hack'];
+                let isSuspicious = scamKeywords.some(word => urlToCheck.toLowerCase().includes(word));
+
+                if (!urlToCheck.startsWith('https://')) {
+                    isSuspicious = true;
+                }
+
+                if (isSuspicious) {
+                    resultDiv.style.color = "#ff4444";
+                    resultDiv.innerHTML = "⚠️ WARNING: This URL matches known threat patterns or is unencrypted!";
+                } else {
+                    resultDiv.style.color = "#44ff44";
+                    resultDiv.innerHTML = "✅ SAFE: No immediate malware or phishing threats detected.";
+                }
+            }, 1500); 
+        });
+    </script>
+
+
+
+<h2>
+This Website Shows Virus's And Malwave On Websites, And If It Detects This Is A WebSite Contact </h2> <a href="mailto:roninisbettxr@gmail.com"><h1>RoninisBettxr@gmail.com</h1></a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
