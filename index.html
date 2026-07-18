@@ -1,8 +1,5 @@
 <html>
-<head>
- <meta name="google-site-verification" content="wBCTUfd9aqTzSu7I_SqgoDWSG0J23s3enLh3THNa8hM" />
-</head>
-        <style>
+<style>
 h4{
 text-align: center;
 color: white;
@@ -78,7 +75,7 @@ background-color: blue;
 <div>
 <input id="user-url" placeholder="Search A Url To Fine MalWare Or Non!" type="url" >
 <button id="scan-btn">Search  Url</button>
-<a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=408896177030-jqph8rudb0r6jgq8hqlj1mrtc95bblti.apps.googleusercontent.com&redirect_uri=https://url-anti.vercel.app&response_type=code&scope=openid%20email%20profile"><button>Sign In</button></a>
+<a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=408896177030-jqph8rudb0r6jgq8hqlj1mrtc95bblti.apps.googleusercontent.com&redirect_uri=https://url-anti.vercel.app&response_type=code&scope=openid%20email%20profile"><button id="sign-in-btn">Sign In</button></a>
 <button id="clear-btn" type="button">Clear</button>
 </div>
 
@@ -144,15 +141,36 @@ clearBtn.addEventListener('click', function() {
 });
 </script>
 
+<script>
+
+// 1. Grab your existing Sign In button from your HTML
+const signInBtn = document.getElementById('sign-in-btn'); // Make sure your HTML button has id="sign-in-btn"
+
+// 2. Track whether the user is logged in or not (starts as false)
+let isLoggedIn = false;
+
+// 3. Listen for clicks on the button
+signInBtn.addEventListener('click', function() {
+    if (!isLoggedIn) {
+        // If they aren't logged in, log them in!
+        isLoggedIn = true;
+        signInBtn.innerText = "Log Out";
+        signInBtn.style.backgroundColor = "#dc2626"; // Optional: Switch it to a deep red color when it's a log out button
+        alert("You are now signed in!");
+    } else {
+        // If they are already logged in, log them out!
+        isLoggedIn = false;
+        signInBtn.innerText = "Sign In";
+        signInBtn.style.backgroundColor = ""; // Resets back to your original red color
+        alert("You have logged out.");
+    }
+});
 
 
 
 
 
-
-
-
-
+</script>
 
 
 
