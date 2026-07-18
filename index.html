@@ -22,7 +22,7 @@ input{
 background-color: green;
 color: white;
 width: 100vw;
-max-width: 71.1vw;
+max-width: 67.1vw;
 height: 52px;
 border-top-left-radius: 20px;
 border-top-right-radius: 20px;
@@ -76,7 +76,14 @@ background-color: blue;
 <input id="user-url" placeholder="Search A Url To Fine MalWare Or Non!">
 <button id="scan-btn">Search  Url</button>
 <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=408896177030-jqph8rudb0r6jgq8hqlj1mrtc95bblti.apps.googleusercontent.com&redirect_uri=https://url-anti.vercel.app&response_type=code&scope=openid%20email%20profile"><button>Sign In</button></a>
+<button id="clear-btn" type="button">Clear</button>
 </div>
+
+
+
+
+
+
 
 <div id="scan-result"></div>
 <title>URL Malware Finder</title>
@@ -123,7 +130,16 @@ This Website Shows Virus's And Malwave On Websites, And If It Detects This Is A 
 </h2>
 
 
+<script>
+// 1. Grab the new Clear button from the HTML
+const clearBtn = document.getElementById('clear-btn');
 
+// 2. Listen for a click on the Clear button
+clearBtn.addEventListener('click', function() {
+    urlInput.value = "";       // Wipes out whatever text is inside the green input bar
+    resultDiv.innerHTML = "";  // Erases the "SAFE" or "WARNING" message
+});
+</script>
 
 
 
