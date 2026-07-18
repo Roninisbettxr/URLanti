@@ -4,7 +4,7 @@ h4{
 text-align: center;
 color: white;
 font-size: 40px;
-
+dragable: true;
 
 
 
@@ -58,8 +58,12 @@ color: white;
 }
 h1{
 text-decoration: none;
-}
 
+}
+title{
+color: blue;
+background-color: blue;
+}
 
 
 
@@ -75,7 +79,7 @@ text-decoration: none;
 </div>
 
 <div id="scan-result"></div>
-
+<title>URL Malware Finder</title>
 <script>
         const scanBtn = document.getElementById('scan-btn');
         const urlInput = document.getElementById('user-url');
