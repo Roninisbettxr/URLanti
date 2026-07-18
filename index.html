@@ -141,37 +141,6 @@ clearBtn.addEventListener('click', function() {
 });
 </script>
 
-<script>
-
-// 1. Grab your existing Sign In button from your HTML
-const signInBtn = document.getElementById('sign-in-btn'); // Make sure your HTML button has id="sign-in-btn"
-
-// 2. Track whether the user is logged in or not (starts as false)
-let isLoggedIn = false;
-
-// 3. Listen for clicks on the button
-signInBtn.addEventListener('click', function() {
-    if (!isLoggedIn) {
-        // If they aren't logged in, log them in!
-        isLoggedIn = true;
-        signInBtn.innerText = "Log Out";
-        signInBtn.style.backgroundColor = "#dc2626"; // Optional: Switch it to a deep red color when it's a log out button
-        alert("You are now signed in!");
-    } else {
-        // If they are already logged in, log them out!
-        isLoggedIn = false;
-        signInBtn.innerText = "Sign In";
-        signInBtn.style.backgroundColor = ""; // Resets back to your original red color
-        alert("You have logged out.");
-    }
-});
-
-
-
-
-
-</script>
-
 
 
 
